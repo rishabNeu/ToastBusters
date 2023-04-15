@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="710.0" prefWidth="1215.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <AnchorPane fx:id="homeImage" layoutY="92.0" prefHeight="710.0" prefWidth="1215.0">
+         <children>
+            <TextField id="usernameField" fx:id="username" alignment="CENTER" layoutX="744.0" layoutY="259.0" prefHeight="26.0" prefWidth="263.0" promptText="Username" stylesheets="@application.css" />
+            <Button fx:id="btnLogin" layoutX="775.0" layoutY="429.0" mnemonicParsing="false" onAction="#checkLogin" prefHeight="31.0" prefWidth="200.0" text="Login" />
+            <HBox fx:id="hboxTop" prefHeight="42.0" prefWidth="1215.0" style="-fx-background-color: #D4F1F4;" />
+            <HBox fx:id="hboxBotton" layoutY="668.0" prefHeight="42.0" prefWidth="1215.0" style="-fx-background-color: #D4F1F4;" />
+            <Label fx:id="homeLabel" alignment="CENTER" layoutX="628.0" layoutY="126.0" prefHeight="70.0" prefWidth="522.0" text="Welcome to Reipe Maker">
+               <font>
+                  <Font size="48.0" />
+               </font></Label>
+            <PasswordField fx:id="password" alignment="CENTER" layoutX="744.0" layoutY="322.0" prefHeight="26.0" prefWidth="263.0" promptText="password" />
+            <ImageView fitHeight="248.0" fitWidth="328.0" layoutX="150.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Documents/recipes.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="653.0" layoutY="205.0" prefHeight="42.0" prefWidth="478.0" text="Your One Step Stop for Recipe Solution !!">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
