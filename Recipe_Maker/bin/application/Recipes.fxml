@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -9,132 +7,73 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.web.WebView?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1215.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RecipeController">
-	<children>
-		<ListView fx:id="idlistview" layoutY="163.0" prefHeight="508.0" prefWidth="338.0">
-         <padding>
-            <Insets bottom="5.0" />
-         </padding></ListView>
-		<VBox layoutX="339.0" prefHeight="674.0" prefWidth="874.0">
-			<children>
-            <HBox prefHeight="68.0" prefWidth="874.0" style="-fx-background-color: #9e4770;" />
-				<HBox prefHeight="165.0" prefWidth="874.0">
-					<children>
-						<ImageView fx:id="idrecipeimage" fitHeight="182.0" fitWidth="337.0" pickOnBounds="true" preserveRatio="true">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" top="10.0" />
-                     </HBox.margin></ImageView>
-                  <VBox prefHeight="207.0" prefWidth="623.0">
-                     <children>
-                        <HBox prefHeight="93.0" prefWidth="526.0">
-                           <children>
-            						<Text fx:id="idrecipetitle" fill="#28429e" strokeType="OUTSIDE" strokeWidth="0.0" text="Recipe Name">
-                                 <font>
-                                    <Font name="Segoe Script" size="36.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="20.0" top="30.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <ToggleButton fx:id="addFavButton" mnemonicParsing="false" onAction="#addToFavourites" styleClass="favbtn" stylesheets="@style.css" text="Add to Favourites">
-                                 <HBox.margin>
-                                    <Insets left="20.0" top="44.0" />
-                                 </HBox.margin>
-                              </ToggleButton>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="371.0">
-                           <children>
-                              <Text fill="#8b0bb5" strokeType="OUTSIDE" strokeWidth="0.0" text="Recipe Cateogy :">
-                                 <HBox.margin>
-                                    <Insets left="20.0" top="20.0" />
-                                 </HBox.margin>
-                                 <font>
-                                    <Font name="Bell MT" size="18.0" />
-                                 </font>
-                              </Text>
-                              <Text fx:id="idrecipecategory" strokeType="OUTSIDE" strokeWidth="0.0" text="Recipe Category">
-                                 <font>
-                                    <Font name="Bell MT" size="18.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="30.0" top="20.0" />
-                                 </HBox.margin>
-                              </Text>
-                           </children>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </HBox>
-                     </children>
-                     <opaqueInsets>
-                        <Insets left="20.0" />
-                     </opaqueInsets>
-                  </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0" />
-					</children>
-				</HBox>
-				<Text fx:id="idrecipeinstructiontitle" fill="#28429e" strokeType="OUTSIDE" strokeWidth="0.0" text="Instructions :">
-               <font>
-                  <Font name="Segoe Script" size="24.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="10.0" />
-               </VBox.margin>
-            </Text>
-				<TextArea fx:id="idrecipeinstructions" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="146.0" prefWidth="873.0" wrapText="true">
-               <VBox.margin>
-                  <Insets bottom="5.0" top="5.0" />
-               </VBox.margin></TextArea>
-            <HBox prefHeight="242.0" prefWidth="874.0">
-               <children>
-            				<TableView fx:id="idrecipetable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="242.0" prefWidth="233.0">
-            					<columns>
-            						<TableColumn fx:id="idrecipeingredients" prefWidth="140.0" text="Ingredients" />
-            						<TableColumn fx:id="idrecipequantity" prefWidth="92.0" text="Quantity" />
-            					</columns>
-            				</TableView>
-                  <WebView fx:id="idrecipewebview" prefHeight="220.0" prefWidth="640.0">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </WebView>
-               </children>
-            </HBox>
-			</children>
-		</VBox>
-      <ComboBox fx:id="recipeComboBox" editable="true" layoutX="14.0" layoutY="96.0" prefHeight="26.0" prefWidth="233.0" style="-fx-background: white; -fx-background-color: transparent; -fx-background-radius: 30px;" />
-      <HBox layoutY="-4.0" prefHeight="6.0" prefWidth="488.0" style="-fx-background-color: #9e4770;">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="995.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RecipeController">
+   <children>
+      <ImageView fitHeight="750.0" fitWidth="1041.0" layoutX="-47.0" layoutY="-82.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/recipe1.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="recipeComboBox" layoutX="27.0" layoutY="101.0" prefHeight="37.0" prefWidth="380.0" />
+      <TextArea layoutX="484.0" layoutY="99.0" prefHeight="39.0" prefWidth="352.0" />
+      <Button fx:id="idSearchButton" layoutX="851.0" layoutY="99.0" mnemonicParsing="false" onAction="#SearchButtonClick" prefHeight="37.0" prefWidth="113.0" text="FIND" />
+      <ListView fx:id="idlistview" layoutX="334.0" layoutY="280.0" prefHeight="380.0" prefWidth="300.0" />
+      <TextArea fx:id="idrecipeinstructions" layoutX="656.0" layoutY="227.0" prefHeight="433.0" prefWidth="333.0" />
+      <TableView fx:id="idrecipetable" layoutX="27.0" layoutY="280.0" prefHeight="380.0" prefWidth="281.0">
+        <columns>
+          <TableColumn fx:id="idrecipeingredients" prefWidth="212.0" text="INGREDIENT" />
+          <TableColumn fx:id="idrecipequantity" prefWidth="68.0" text="QTY" />
+        </columns>
+      </TableView>
+      <HBox layoutX="262.0" layoutY="14.0" prefHeight="62.0" prefWidth="380.0" style="-fx-background-color: lightgreen;">
          <children>
-            <ImageView fx:id="recipeBackButton" fitHeight="38.0" fitWidth="42.0" onMouseClicked="#goToMainMenu" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/left-arrow.png" />
-               </image>
-            </ImageView>
+            <Label prefHeight="44.0" prefWidth="378.0" text="      SEARCH  RECIPES" textAlignment="CENTER">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
          </children>
       </HBox>
-      <Label alignment="CENTER" layoutX="-3.0" layoutY="31.0" prefHeight="22.0" prefWidth="317.0" text="FIND RECIPES" textFill="#7c3d9c">
-         <font>
-            <Font name="Segoe Print" size="37.0" />
-         </font>
-      </Label>
-						<Button fx:id="idSearchButton" layoutX="258.0" layoutY="95.0" mnemonicParsing="false" onAction="#SearchButtonClick" prefHeight="28.0" prefWidth="66.0" style="-fx-background-color: #631d76;" styleClass="search-button" stylesheets="@style.css" text="Search" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Button>
-      <HBox layoutX="-5.0" layoutY="671.0" prefHeight="39.0" prefWidth="1224.0" style="-fx-background-color: #631d76;" />
-	</children>
-	<cursor>
-		<Cursor fx:constant="DEFAULT" />
-	</cursor>
+      <HBox layoutX="436.0" layoutY="107.0" prefHeight="26.0" prefWidth="32.0" style="-fx-background-color: lightgreen;">
+         <children>
+            <Label text="   OR" textFill="#0a0a0a" />
+         </children>
+      </HBox>
+      <VBox layoutX="27.0" layoutY="143.0" prefHeight="125.0" prefWidth="378.0" style="-fx-background-color: white;">
+         <children>
+            <HBox prefHeight="68.0" prefWidth="378.0">
+               <children>
+                  <Label text="RECIPE NAME:   ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="idrecipetitle" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE" wrappingWidth="263.21630859375" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="378.0">
+               <children>
+                  <Label text="CATEGORY:   " />
+                  <Text fx:id="idrecipecategory" strokeType="OUTSIDE" strokeWidth="0.0" text="CATEGORY" wrappingWidth="298.21630859375" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Pane layoutX="436.0" layoutY="143.0" prefHeight="125.0" prefWidth="200.0" style="-fx-background-color: white;" />
+      <Pane layoutX="736.0" layoutY="181.0" prefHeight="26.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Text fx:id="idrecipeinstructiontitle" layoutX="52.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSTRUCTIONS" />
+         </children>
+      </Pane>
+      <ImageView fx:id="idrecipeimage" fitHeight="116.0" fitWidth="188.0" layoutX="443.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
 </AnchorPane>

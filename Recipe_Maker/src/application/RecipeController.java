@@ -75,12 +75,6 @@ public class RecipeController implements Initializable {
     @FXML
     private TableView<Ingredients> idrecipetable;
     
-    @FXML
-    private MediaView idrecipemedia;
-    
-    @FXML
-    private WebView idrecipewebview;
-    
     
     @FXML
     ComboBox<String> recipeComboBox;
@@ -169,11 +163,11 @@ public class RecipeController implements Initializable {
 	            idrecipeinstructiontitle.setText("Recipe Instructions:");
 	            idrecipeinstructions.setText(arr2[0].getString("strInstructions"));
 	            
-	            WebEngine webEngine = idrecipewebview.getEngine();
+	           // WebEngine webEngine = idrecipewebview.getEngine();
 	            String test = arr2[0].getString("strYoutube");
 	            test = test.replaceAll(".+=", "");
-	            webEngine.load("http://www.youtube.com/watch?v=".concat(test));
-	            idrecipewebview.setPrefSize(640, 390);
+	            //webEngine.load("http://www.youtube.com/watch?v=".concat(test));
+	            //idrecipewebview.setPrefSize(640, 390);
 	            
 	            
 	            for(int i = 0; i<recipes.length(); i++) {
@@ -292,11 +286,11 @@ public class RecipeController implements Initializable {
         idrecipeinstructiontitle.setText("Recipe Instructions:");
         idrecipeinstructions.setText(arr2[0].getString("strInstructions"));
        
-        WebEngine webEngine = idrecipewebview.getEngine();
+       // WebEngine webEngine = idrecipewebview.getEngine();
         String test = arr2[0].getString("strYoutube");
         test = test.replaceAll(".+=", "");
-        webEngine.load("https://www.youtube.com/watch?v=".concat(test));
-        idrecipewebview.setPrefSize(640, 390);
+        //webEngine.load("https://www.youtube.com/watch?v=".concat(test));
+        //idrecipewebview.setPrefSize(640, 390);
         
 
         

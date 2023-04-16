@@ -4,33 +4,24 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 
 <AnchorPane prefHeight="710.0" prefWidth="1215.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainMenuController">
    <children>
       <AnchorPane fx:id="mainMenuAnchorPane" layoutX="-1.0" layoutY="-2.0" prefHeight="714.0" prefWidth="1262.0">
          <children>
-            <HBox fx:id="mainMenuHBox" prefHeight="50.0" prefWidth="1262.0" style="-fx-background-color: #9e4770;" />
-            <ImageView fx:id="recipeImage" fitHeight="708.0" fitWidth="494.0" layoutX="380.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="recipeImage" fitHeight="411.0" fitWidth="1293.0" layoutX="5.0" layoutY="368.0" pickOnBounds="true">
                <image>
-                  <Image url="@images/recipe.jpeg" />
+                  <Image url="@images/pantry1.jpeg" />
                </image>
             </ImageView>
-            <ImageView fx:id="plannerImage" fitHeight="618.0" fitWidth="416.0" layoutX="850.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="pantryImage" fitHeight="363.0" fitWidth="1297.0" pickOnBounds="true">
                <image>
-                  <Image url="@images/planner.jpg" />
+                  <Image url="@images/pantry2.jpeg" />
                </image>
             </ImageView>
-            <Button fx:id="recipeBtn" layoutX="553.0" layoutY="544.0" mnemonicParsing="false" onAction="#showRecipeView" onMouseClicked="#showPlannerView" prefHeight="50.0" prefWidth="148.0" text="Recipe" />
-            <Button fx:id="plannerBtn" layoutX="983.0" layoutY="544.0" mnemonicParsing="false" onAction="#showPlannerView" onMouseClicked="#showRecipeView" prefHeight="50.0" prefWidth="148.0" text="Planner" />
-            <ImageView fx:id="pantryImage" fitHeight="615.0" fitWidth="474.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/pantry.jpeg" />
-               </image>
-            </ImageView>
-            <Button fx:id="pantryBtn" layoutX="131.0" layoutY="544.0" mnemonicParsing="false" onAction="#showPantryView" onMouseClicked="#showPantryView" prefHeight="50.0" prefWidth="148.0" text="Pantry" />
+            <Button fx:id="pantryBtn" layoutX="566.0" layoutY="152.0" mnemonicParsing="false" onAction="#showPantryView" onMouseClicked="#showPantryView" prefHeight="86.0" prefWidth="274.0" text="MANAGE YOUR PANTRY" />
+            <Button fx:id="recipeBtn" layoutX="578.0" layoutY="574.0" mnemonicParsing="false" onAction="#showRecipeView" onMouseClicked="#showPlannerView" prefHeight="86.0" prefWidth="262.0" text="FIND YOUR RECIPE" />
          </children>
       </AnchorPane>
-      <HBox fx:id="mainMenuHBox1" layoutY="664.0" prefHeight="50.0" prefWidth="1261.0" style="-fx-background-color: #631d76;" />
    </children>
 </AnchorPane>
