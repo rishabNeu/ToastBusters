@@ -24,7 +24,7 @@
          </image>
       </ImageView>
       <ComboBox fx:id="recipeComboBox" layoutX="27.0" layoutY="101.0" prefHeight="37.0" prefWidth="380.0" />
-      <TextArea layoutX="484.0" layoutY="99.0" prefHeight="39.0" prefWidth="352.0" />
+      <TextArea fx:id="idSearchItems" layoutX="484.0" layoutY="99.0" prefHeight="39.0" prefWidth="352.0" />
       <Button fx:id="idSearchButton" layoutX="851.0" layoutY="99.0" mnemonicParsing="false" onAction="#SearchButtonClick" prefHeight="37.0" prefWidth="113.0" text="FIND" />
       <ListView fx:id="idlistview" layoutX="334.0" layoutY="280.0" prefHeight="380.0" prefWidth="300.0" />
       <TextArea fx:id="idrecipeinstructions" layoutX="656.0" layoutY="227.0" prefHeight="433.0" prefWidth="333.0" />
@@ -75,5 +75,6 @@
          </children>
       </Pane>
       <ImageView fx:id="idrecipeimage" fitHeight="116.0" fitWidth="188.0" layoutX="443.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="idFindByItems" layoutX="851.0" layoutY="45.0" mnemonicParsing="false" onAction="#SearchButtonClickByItems" prefHeight="37.0" prefWidth="113.0" text="FIND BY ITEMS" />
    </children>
 </AnchorPane>
