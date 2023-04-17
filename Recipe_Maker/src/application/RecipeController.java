@@ -264,7 +264,7 @@ public class RecipeController implements Initializable {
     private void SearchButtonClickByItems() {
     	System.out.println("Recipe box items: "+ recipeComboBox.getValue());
     	MealApi api = new MealApi();
-    	String responseBody = api.callApi(MealApi.MEALDB_URL, idSearchItems.getText());
+    	String responseBody = api.callApiForItems(MealApi.MEALDB_URL_SEARCH_BY_INGREDIENT, idSearchItems.getText());
 		System.out.println("The response is -------"+responseBody);
     	
 		

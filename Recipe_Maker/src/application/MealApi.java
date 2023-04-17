@@ -14,6 +14,7 @@ public class MealApi {
 	
 	public String callApi(String url,String query) {
 		System.out.println(url.concat(query));
+
 		HttpRequest request = HttpRequest.newBuilder()
 				.uri(URI.create(url.concat(query)))
 				.method("GET", HttpRequest.BodyPublishers.noBody())
@@ -28,4 +29,36 @@ public class MealApi {
 		}
 		return response.body();
 	}
+	
+	
+	
+	public String callApiForItems(String url,String query) {
+		System.out.println(url.concat(query));
+		StringBuilder sb = new StringBuilder(url);
+		
+		String[] arr=query.split(",");
+		sb.append(arr[0]);
+		
+		for (int i = 1; i < arr.length; i++) {
+			sb.append("&&i="+arr[i]);
+
+		}
+		
+		System.out.println(sb.toString());
+
+		HttpRequest request = HttpRequest.newBuilder()
+				.uri(URI.create(sb.toString()))
+				.method("GET", HttpRequest.BodyPublishers.noBody())
+				.build();
+		HttpResponse<String> response = null;
+		try {
+			response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return response.body();
+	}
+	
 }
