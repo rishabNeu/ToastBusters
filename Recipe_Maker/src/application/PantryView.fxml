@@ -1,96 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pantryViewAnchorPane" prefHeight="710.0" prefWidth="1215.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene2Controller">
+<AnchorPane fx:id="pantryViewAnchorPane" prefHeight="710.0" prefWidth="1215.0" style="-fx-background-color: #15313a;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene2Controller">
    <children>
-      <ImageView fitHeight="606.0" fitWidth="1215.0" layoutY="52.0" pickOnBounds="true">
+      <ImageView fitHeight="478.0" fitWidth="1215.0" layoutY="180.0" pickOnBounds="true">
          <image>
             <Image url="@images/pantrybg.jpeg" />
          </image>
       </ImageView>
-      <HBox prefHeight="53.0" prefWidth="1215.0" style="-fx-background-color: #9e4770;">
+      <HBox prefHeight="53.0" prefWidth="1215.0" style="-fx-background-color: #15313a;">
          <children>
-            <ImageView fx:id="backButton" fitHeight="54.0" fitWidth="61.0" onMouseClicked="#switchToScene1" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/left-arrow.png" />
-               </image>
-            </ImageView>
+            <Button fx:id="backButton" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToScene1" onMouseClicked="#switchToScene1" prefHeight="49.0" prefWidth="119.0" style="-fx-background-color: #15313a;" text="Back" textFill="#c0a28f" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="84.0" prefWidth="918.0" text="Let's add ingridents to the pantry ..." textAlignment="JUSTIFY" textFill="#c0a28f" textOverrun="CENTER_WORD_ELLIPSIS">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="26.0" />
+               </font>
+            </Label>
          </children></HBox>
-      <HBox layoutY="657.0" prefHeight="53.0" prefWidth="1215.0" style="-fx-background-color: #631d76;" />
-      <TableView fx:id="tvGrocery" layoutX="167.0" layoutY="357.0" prefHeight="296.0" prefWidth="602.0" styleClass="pantrytable">
+      <HBox layoutY="657.0" prefHeight="53.0" prefWidth="1215.0" style="-fx-background-color: #15313a;" />
+      <TableView fx:id="tvGrocery" layoutX="256.0" layoutY="207.0" prefHeight="416.0" prefWidth="798.0" style="-fx-background-color: #89949c;" styleClass="pantrytable">
         <columns>
-          <TableColumn fx:id="colid" prefWidth="65.0" text="ID" />
-          <TableColumn fx:id="colGrocery" prefWidth="177.0" text="Ingredient" />
-            <TableColumn fx:id="colQuantity" prefWidth="173.0" text="Quantity" />
-            <TableColumn fx:id="colUseBy" prefWidth="186.0" text="Use By" />
+          <TableColumn fx:id="colid" editable="false" prefWidth="65.0" text="ID" />
+          <TableColumn fx:id="colGrocery" editable="false" prefWidth="276.0715026855469" text="Ingredient" />
+            <TableColumn fx:id="colQuantity" editable="false" prefWidth="224.928466796875" text="Quantity" />
+            <TableColumn fx:id="colUseBy" editable="false" prefWidth="231.56549072265625" text="Expires" />
         </columns>
       </TableView>
-      <Label alignment="CENTER" layoutX="188.0" layoutY="60.0" prefHeight="31.0" prefWidth="572.0" text="PANTRY" textAlignment="CENTER" textFill="#7c3d9c">
+      <Label fx:id="quantityLabel" layoutX="468.0" layoutY="75.0" pickOnBounds="false" prefHeight="17.0" prefWidth="99.0" text="Quantity :" textFill="#c0a28f">
          <font>
-            <Font name="Segoe Print" size="39.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Pane fx:id="rightPlannerPane" layoutX="-18.0" layoutY="108.0" prefHeight="247.0" prefWidth="1229.0" style="-fx-background-color: #fbfbfb;">
-         <children>
-            <Label alignment="CENTER" layoutX="359.0" layoutY="24.0" prefHeight="48.0" prefWidth="261.0" text="ADD TO PANTRY" textAlignment="CENTER" textFill="#28429e">
-               <font>
-                  <Font name="Segoe Script" size="26.0" />
-               </font>
-            </Label>
-            <VBox layoutX="51.0" layoutY="126.0" prefHeight="168.0" prefWidth="90.0" spacing="43.0">
-               <children>
-                  <Label fx:id="ingredientLabel" prefHeight="17.0" prefWidth="100.0" text="Ingredient">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-               </children>
-            </VBox>
-            <VBox layoutX="161.0" layoutY="126.0" prefHeight="120.0" prefWidth="178.0" spacing="45.0">
-               <children>
-                  <TextField fx:id="tfGrocery" />
-                  
-               </children>
-            </VBox>
-            <ImageView fx:id="btnInsert" fitHeight="53.0" fitWidth="43.0" layoutX="430.0" layoutY="186.0" onMouseClicked="#handleInsert" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/add-to-basket.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="btnUpdate" fitHeight="43.0" fitWidth="43.0" layoutX="527.0" layoutY="189.0" onMouseClicked="#handleUpdate" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/updated.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="btnDelete" fitHeight="43.0" fitWidth="43.0" layoutX="623.0" layoutY="189.0" onMouseClicked="#handleDelete" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/delete.png" />
-               </image>
-            </ImageView>
-            <DatePicker fx:id="tfUseBy" layoutX="769.0" layoutY="130.0" />
-            <Label fx:id="quantityLabel" layoutX="352.0" layoutY="129.0" prefHeight="17.0" prefWidth="99.0" text="Quantity">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField fx:id="tfQuantity" layoutX="447.0" layoutY="128.0" />
-            <Label fx:id="useByLabel" layoutX="644.0" layoutY="132.0" prefHeight="17.0" prefWidth="100.0" text="Use By">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
+      <DatePicker fx:id="tfUseBy" layoutX="813.0" layoutY="73.0" prefHeight="26.0" prefWidth="108.0" />
+      <Label fx:id="ingredientLabel" layoutX="41.0" layoutY="74.0" prefHeight="17.0" prefWidth="100.0" text="Ingredients :" textFill="#c0a28f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnInsert" alignment="CENTER" layoutX="411.0" layoutY="129.0" mnemonicParsing="false" mouseTransparent="true" onAction="#handleInsert" style="-fx-background-color: #8c9ca0;" text="Add Ingridents" textFill="#251114" textOverrun="WORD_ELLIPSIS">
+         <effect>
+            <Glow />
+         </effect>
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" alignment="CENTER" layoutX="770.0" layoutY="129.0" mnemonicParsing="false" mouseTransparent="true" onAction="#handleDelete" style="-fx-background-color: #944c34;" text="Delete Ingridents" textFill="#251114">
+         <effect>
+            <Glow />
+         </effect>
+      </Button>
+      <Button fx:id="btnUpdate" alignment="CENTER" layoutX="578.0" layoutY="129.0" mnemonicParsing="false" mouseTransparent="true" onAction="#handleUpdate" style="-fx-background-color: #8c9ca0;" text="Update Ingridents" textFill="#251114">
+         <effect>
+            <Glow />
+         </effect>
+      </Button>
+      <ImageView fitHeight="180.0" fitWidth="177.0" layoutX="1029.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/tarushukla/Downloads/food.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfGrocery" layoutX="174.0" layoutY="73.0" prefHeight="26.0" prefWidth="245.0" />
+      <Label fx:id="useByLabel" layoutX="735.0" layoutY="75.0" prefHeight="23.0" prefWidth="70.0" text="Expires :" textFill="#c0a28f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfQuantity" layoutX="566.0" layoutY="73.0" prefHeight="26.0" prefWidth="115.0" />
    </children>
 </AnchorPane>

@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TableView;
@@ -18,6 +19,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
@@ -42,28 +44,24 @@ public class Scene2Controller implements Initializable {
 	@FXML
 	private TableColumn<Groceries, String> colUseBy;
 	@FXML
-	private ImageView btnInsert;
+	private Button btnInsert;
 	@FXML
-	private ImageView btnDelete;
+	private Button btnDelete;
 	@FXML
-	private ImageView btnUpdate;
+	private Button btnUpdate;
 	@FXML
-	private ImageView backButton;
+	private Button backButton;
 
 	
 	
 	// Event Listener on Button.onAction
-	@FXML
-	public void switchToScene1(MouseEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		//we get the source of event and cast it to a node
-		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		stage.setScene(scene);
-		stage.show();
-	}
-	
+	 @FXML void switchToScene1(ActionEvent event) throws IOException {
+	    	Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+	    }
     
     public ObservableList<Groceries> getGroceriesList(){
     	ObservableList<Groceries> groceryList = FXCollections.observableArrayList();
@@ -96,6 +94,7 @@ public class Scene2Controller implements Initializable {
     }
     
     private void insertRecord() {
+    	System.out.println(tfGrocery.getText());
     	DBConnection db = new DBConnection();
     	String query = "INSERT INTO groceries (grocery_name,quantity, useby) VALUES (" + "'" + tfGrocery.getText() + "','" + tfQuantity.getText() + "','" + tfUseBy.getValue() + "')";
     	System.out.println(query);
@@ -120,17 +119,18 @@ public class Scene2Controller implements Initializable {
 	
 	// Event Listener on Button[#btnInsert].onAction
 	@FXML
-	public void handleInsert(MouseEvent event) {
+	private void handleInsert(ActionEvent event) throws IOException{
+		System.out.println("inside handleInsert");
 		insertRecord();
 	}
 	// Event Listener on Button[#btnDelete].onAction
 	@FXML
-	public void handleDelete(MouseEvent event) {
+	public void handleDelete(ActionEvent event) {
 		deleteButton();
 	}
 	// Event Listener on Button[#btnUpdate].onAction
 	@FXML
-	public void handleUpdate(MouseEvent event) {
+	public void handleUpdate(ActionEvent event) {
 		updateRecord();
 		
 		
