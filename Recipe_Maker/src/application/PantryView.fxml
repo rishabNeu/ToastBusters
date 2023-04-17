@@ -34,7 +34,7 @@
             </Label>
          </children></HBox>
       <HBox layoutY="657.0" prefHeight="53.0" prefWidth="1215.0" style="-fx-background-color: #15313a;" />
-      <TableView fx:id="tvGrocery" layoutX="256.0" layoutY="207.0" prefHeight="416.0" prefWidth="798.0" style="-fx-background-color: #89949c;" styleClass="pantrytable">
+      <TableView fx:id="tvGrocery" layoutX="256.0" layoutY="207.0" onMouseClicked="#rowClicked" prefHeight="416.0" prefWidth="798.0" style="-fx-background-color: #89949c;" styleClass="pantrytable">
         <columns>
           <TableColumn fx:id="colid" editable="false" prefWidth="65.0" text="ID" />
           <TableColumn fx:id="colGrocery" editable="false" prefWidth="276.0715026855469" text="Ingredient" />
@@ -53,24 +53,6 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnInsert" alignment="CENTER" layoutX="411.0" layoutY="129.0" mnemonicParsing="false" mouseTransparent="true" onAction="#handleInsert" style="-fx-background-color: #8c9ca0;" text="Add Ingridents" textFill="#251114" textOverrun="WORD_ELLIPSIS">
-         <effect>
-            <Glow />
-         </effect>
-         <font>
-            <Font name="Comic Sans MS" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnDelete" alignment="CENTER" layoutX="770.0" layoutY="129.0" mnemonicParsing="false" mouseTransparent="true" onAction="#handleDelete" style="-fx-background-color: #944c34;" text="Delete Ingridents" textFill="#251114">
-         <effect>
-            <Glow />
-         </effect>
-      </Button>
-      <Button fx:id="btnUpdate" alignment="CENTER" layoutX="578.0" layoutY="129.0" mnemonicParsing="false" mouseTransparent="true" onAction="#handleUpdate" style="-fx-background-color: #8c9ca0;" text="Update Ingridents" textFill="#251114">
-         <effect>
-            <Glow />
-         </effect>
-      </Button>
       <ImageView fitHeight="180.0" fitWidth="177.0" layoutX="1029.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/Users/tarushukla/Downloads/food.png" />
@@ -83,5 +65,26 @@
          </font>
       </Label>
       <TextField fx:id="tfQuantity" layoutX="566.0" layoutY="73.0" prefHeight="26.0" prefWidth="115.0" />
+      <Button fx:id="btnUpdate" alignment="CENTER" layoutX="578.0" layoutY="129.0" onAction="#handleUpdate" style="-fx-background-color: #8c9ca0;" text="Update Ingridents" textFill="#251114">
+         <effect>
+            <Glow />
+         </effect>
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnInsert" alignment="CENTER" layoutX="411.0" layoutY="129.0" onAction="#handleInsert" style="-fx-background-color: #8c9ca0;" text="Add Ingridents" textFill="#251114">
+         <effect>
+            <Glow />
+         </effect>
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" alignment="CENTER" layoutX="770.0" layoutY="129.0" onAction="#handleDelete" onMousePressed="#handleDelete" style="-fx-background-color: #944c34;" text="Delete Ingridents" textFill="#251114">
+         <effect>
+            <Glow />
+         </effect>
+      </Button>
    </children>
 </AnchorPane>

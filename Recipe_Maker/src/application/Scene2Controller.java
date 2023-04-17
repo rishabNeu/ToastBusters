@@ -16,6 +16,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -42,15 +43,19 @@ public class Scene2Controller implements Initializable {
 	@FXML
 	private TableColumn<Groceries, String> colQuantity;
 	@FXML
-	private TableColumn<Groceries, String> colUseBy;
-	@FXML
-	private Button btnInsert;
-	@FXML
-	private Button btnDelete;
-	@FXML
-	private Button btnUpdate;
-	@FXML
-	private Button backButton;
+	private TableColumn<Groceries, Date> colUseBy;
+
+    @FXML
+    private Button backButton;
+
+    @FXML
+    private Button btnDelete;
+
+    @FXML
+    private Button btnInsert;
+
+    @FXML
+    private Button btnUpdate;
 
 	
 	
@@ -88,13 +93,12 @@ public class Scene2Controller implements Initializable {
     	colid.setCellValueFactory(new PropertyValueFactory<Groceries, Integer>("id"));
     	colGrocery.setCellValueFactory(new PropertyValueFactory<Groceries, String>("groceryName"));
     	colQuantity.setCellValueFactory(new PropertyValueFactory<Groceries, String>("quantity"));
-    	colUseBy.setCellValueFactory(new PropertyValueFactory<Groceries, String>("useBy"));
+    	colUseBy.setCellValueFactory(new PropertyValueFactory<Groceries, Date>("useBy"));
     	
     	tvGrocery.setItems(list);
     }
     
     private void insertRecord() {
-    	System.out.println(tfGrocery.getText());
     	DBConnection db = new DBConnection();
     	String query = "INSERT INTO groceries (grocery_name,quantity, useby) VALUES (" + "'" + tfGrocery.getText() + "','" + tfQuantity.getText() + "','" + tfUseBy.getValue() + "')";
     	System.out.println(query);
@@ -108,6 +112,8 @@ public class Scene2Controller implements Initializable {
         System.out.println(query);
         db.connectAndExecute(query, DBConnection.INSERT);
         showGroceries();
+        tfGrocery.setText("");
+        tfQuantity.setText("");
     }
     
     private void deleteButton(){
@@ -115,12 +121,13 @@ public class Scene2Controller implements Initializable {
         String query = "DELETE FROM groceries WHERE grocery_name = '" + tfGrocery.getText() + "'";
         db.connectAndExecute(query, DBConnection.DELETE);
         showGroceries();
+        tfGrocery.setText("");
+        tfQuantity.setText("");
     }
 	
 	// Event Listener on Button[#btnInsert].onAction
 	@FXML
-	private void handleInsert(ActionEvent event) throws IOException{
-		System.out.println("inside handleInsert");
+	public void handleInsert(ActionEvent event) {
 		insertRecord();
 	}
 	// Event Listener on Button[#btnDelete].onAction
@@ -132,9 +139,16 @@ public class Scene2Controller implements Initializable {
 	@FXML
 	public void handleUpdate(ActionEvent event) {
 		updateRecord();
-		
-		
 	}
+	
+	@FXML
+	void rowClicked(MouseEvent event) {
+		Groceries clickedGroceries = tvGrocery.getSelectionModel()
+.getSelectedItem();
+		tfGrocery.setText(String.valueOf(clickedGroceries.getGroceryName()));
+		tfQuantity.setText(String.valueOf(clickedGroceries.getQuantity()));
+		}
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		showGroceries();
