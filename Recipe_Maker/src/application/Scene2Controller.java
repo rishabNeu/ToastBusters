@@ -143,8 +143,7 @@ public class Scene2Controller implements Initializable {
 	
 	@FXML
 	void rowClicked(MouseEvent event) {
-		Groceries clickedGroceries = tvGrocery.getSelectionModel()
-.getSelectedItem();
+		Groceries clickedGroceries = tvGrocery.getSelectionModel().getSelectedItem();
 		tfGrocery.setText(String.valueOf(clickedGroceries.getGroceryName()));
 		tfQuantity.setText(String.valueOf(clickedGroceries.getQuantity()));
 		}
