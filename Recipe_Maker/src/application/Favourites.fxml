@@ -17,7 +17,7 @@
    <children>
       <HBox prefHeight="42.0" prefWidth="1215.0" style="-fx-background-color: #9e4770;" />
       <HBox layoutY="668.0" prefHeight="42.0" prefWidth="1215.0" style="-fx-background-color: #631d76;" />
-      <Label layoutX="355.0" layoutY="52.0" prefHeight="66.0" prefWidth="253.0" text="Calendar" textFill="#7c3d9c">
+      <Label layoutX="223.0" layoutY="52.0" prefHeight="66.0" prefWidth="521.0" text="View Your Favourites" textFill="#7c3d9c">
          <font>
             <Font name="Segoe Print" size="52.0" />
          </font>
