@@ -36,6 +36,9 @@ public class MainMenuController implements Initializable  {
 	Button plannerBtn;
 	
 	@FXML
+	Button favouriteBtn;
+	
+	@FXML
 	public void showPantryView(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("PantryView.fxml"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -62,6 +65,15 @@ public class MainMenuController implements Initializable  {
 		stage.show();
 	}
 
+	@FXML
+	public void showFavouriteView(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("Planner.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub

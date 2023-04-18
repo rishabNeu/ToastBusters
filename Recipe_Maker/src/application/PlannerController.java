@@ -13,18 +13,33 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class PlannerController implements Initializable  {
 
-    @FXML
-    private ImageView backPlanner;
+	
+	@FXML
+    private Button backButton;
+	
+	
+	@FXML
+	private TextArea favTxtArea;
+	
+//    @FXML
+//    private ImageView backPlanner;
 
     @FXML
     private ComboBox<String> cbBreakfast;
@@ -58,12 +73,22 @@ public class PlannerController implements Initializable  {
     
     
 
-    @FXML
-    void goToMainMenu(ActionEvent event) throws IOException {
-    	Scene2Controller sc = new Scene2Controller();
-    	sc.switchToScene1(event);
-    }
+//    @FXML
+//    void goToMainMenu(ActionEvent event) throws IOException {
+//    	Scene2Controller sc = new Scene2Controller();
+//    	sc.switchToScene1(event);
+//    }
 
+    @FXML
+    private void backAction(ActionEvent event) throws IOException {
+    	System.out.println("in back button");
+    	Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+    }
+    
     @FXML
     void updateDayPlan(MouseEvent event) {
     	DBConnection db = new DBConnection();
@@ -101,6 +126,8 @@ public class PlannerController implements Initializable  {
 			cbBreakfast.getItems().add(lvs);
 			cbDinner.getItems().add(lvs);
 			cbLunch.getItems().add(lvs);
+			favTxtArea.appendText(lvs + "\n");
+
 	    }
 		showPlanner();
 		
