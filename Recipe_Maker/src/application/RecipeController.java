@@ -18,6 +18,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -47,6 +48,9 @@ public class RecipeController implements Initializable {
 	
 	String recipeindex;
 	    
+	@FXML
+    private Button addFavButton;
+	
     @FXML
     private Button idSearchButton;
     
