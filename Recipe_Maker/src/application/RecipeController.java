@@ -258,6 +258,8 @@ public class RecipeController implements Initializable {
 	            idrecipetable.setItems(ingredients);
 	        }
 	    });
+	    recipeComboBox.valueProperty().set(null);
+
 	    
     }
     

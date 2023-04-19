@@ -41,35 +41,35 @@ public class PlannerController implements Initializable  {
 //    @FXML
 //    private ImageView backPlanner;
 
-    @FXML
-    private ComboBox<String> cbBreakfast;
+//    @FXML
+//    private ComboBox<String> cbBreakfast;
 
-    @FXML
-    private ComboBox<String> cbDay;
+//    @FXML
+//    private ComboBox<String> cbDay;
+//
+//    @FXML
+//    private ComboBox<String> cbDinner;
+//
+//    @FXML
+//    private ComboBox<String> cbLunch;
+//    
+//    @FXML
+//    private TableView<Planner> plannerView;
 
-    @FXML
-    private ComboBox<String> cbDinner;
+//    @FXML
+//    private TableColumn<Planner, String> colBreakfast;
+//
+//    @FXML
+//    private TableColumn<Planner, String> colDay;
 
-    @FXML
-    private ComboBox<String> cbLunch;
-    
-    @FXML
-    private TableView<Planner> plannerView;
+//    @FXML
+//    private TableColumn<Planner, String> colDinner;
+//
+//    @FXML
+//    private TableColumn<Planner, String> colLunch;
 
-    @FXML
-    private TableColumn<Planner, String> colBreakfast;
-
-    @FXML
-    private TableColumn<Planner, String> colDay;
-
-    @FXML
-    private TableColumn<Planner, String> colDinner;
-
-    @FXML
-    private TableColumn<Planner, String> colLunch;
-
-    @FXML
-    private ImageView updatePlan;
+//    @FXML
+//    private ImageView updatePlan;
     
     
 
@@ -89,19 +89,19 @@ public class PlannerController implements Initializable  {
 		stage.show();
     }
     
-    @FXML
-    void updateDayPlan(MouseEvent event) {
-    	DBConnection db = new DBConnection();
-    	String query = "UPDATE dayPlan SET day  = '" + cbDay.getValue() +
-    			"', breakfast = '" + cbBreakfast.getValue() +
-    			"', lunch = '" + cbLunch.getValue() +
-    			"', dinner = '" + cbDinner.getValue() +
-    			"' WHERE day = '" + cbDay.getValue() + "'";
-        System.out.println(query);
-        db.connectAndExecute(query, DBConnection.INSERT);
-        showPlanner();
-
-    }
+//    @FXML
+//    void updateDayPlan(MouseEvent event) {
+//    	DBConnection db = new DBConnection();
+//    	String query = "UPDATE dayPlan SET day  = '" + cbDay.getValue() +
+//    			"', breakfast = '" + cbBreakfast.getValue() +
+//    			"', lunch = '" + cbLunch.getValue() +
+//    			"', dinner = '" + cbDinner.getValue() +
+//    			"' WHERE day = '" + cbDay.getValue() + "'";
+//        System.out.println(query);
+//        db.connectAndExecute(query, DBConnection.INSERT);
+//        showPlanner();
+//
+//    }
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -123,43 +123,43 @@ public class PlannerController implements Initializable  {
 		
 		
 		for(String lvs : favourites) {
-			cbBreakfast.getItems().add(lvs);
-			cbDinner.getItems().add(lvs);
-			cbLunch.getItems().add(lvs);
+//			cbBreakfast.getItems().add(lvs);
+//			cbDinner.getItems().add(lvs);
+//			cbLunch.getItems().add(lvs);
 			favTxtArea.appendText(lvs + "\n");
 
 	    }
-		showPlanner();
+//		showPlanner();
 		
 	}
 	
-	private void showPlanner() {
-		DBConnection db = new DBConnection();
-		ObservableList<Planner> plannerList =  FXCollections.observableArrayList();
-		String query_planner = "SELECT * FROM dayPlan";
-		ResultSet rs2;
-		
-		try{
-			rs2 = db.connectAndExecute(query_planner,DBConnection.SELECT);
-			Planner planner;
-			while(rs2.next()) {
-				planner = new Planner(rs2.getInt("id"), rs2.getString("day"),
-						rs2.getString("breakfast"), rs2.getString("lunch"), rs2.getString("dinner"));
-				plannerList.add(planner);
-				cbDay.getItems().add(rs2.getString("day"));
-			}
-		}
-		catch(Exception ex) {
-			ex.printStackTrace();
-		}
-		
-		colDay.setCellValueFactory(new PropertyValueFactory<Planner, String>("day"));
-		colBreakfast.setCellValueFactory(new PropertyValueFactory<Planner, String>("breakfast"));
-		colLunch.setCellValueFactory(new PropertyValueFactory<Planner, String>("lunch"));
-    	colDinner.setCellValueFactory(new PropertyValueFactory<Planner, String>("dinner"));
-    	
-    	plannerView.setItems(plannerList);	
-		
-	}
+//	private void showPlanner() {
+//		DBConnection db = new DBConnection();
+//		ObservableList<Planner> plannerList =  FXCollections.observableArrayList();
+//		String query_planner = "SELECT * FROM dayPlan";
+//		ResultSet rs2;
+//		
+//		try{
+//			rs2 = db.connectAndExecute(query_planner,DBConnection.SELECT);
+//			Planner planner;
+//			while(rs2.next()) {
+//				planner = new Planner(rs2.getInt("id"), rs2.getString("day"),
+//						rs2.getString("breakfast"), rs2.getString("lunch"), rs2.getString("dinner"));
+//				plannerList.add(planner);
+//				cbDay.getItems().add(rs2.getString("day"));
+//			}
+//		}
+//		catch(Exception ex) {
+//			ex.printStackTrace();
+//		}
+//		
+//		colDay.setCellValueFactory(new PropertyValueFactory<Planner, String>("day"));
+//		colBreakfast.setCellValueFactory(new PropertyValueFactory<Planner, String>("breakfast"));
+//		colLunch.setCellValueFactory(new PropertyValueFactory<Planner, String>("lunch"));
+//    	colDinner.setCellValueFactory(new PropertyValueFactory<Planner, String>("dinner"));
+//    	
+//    	plannerView.setItems(plannerList);	
+//		
+//	}
 
 }
