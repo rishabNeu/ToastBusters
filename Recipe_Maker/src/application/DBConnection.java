@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class DBConnection {
-	static String URL = "jdbc:mysql://localhost:3306/recipes";
+	static String URL = "jdbc:mysql://localhost:3306/cerealkillers";
 	static String USER = "root";
-	static String PASS = "password";
+	static String PASS = "rootadmin";
 	static String SELECT = "SELECT";
 	static String INSERT = "INSERT";
 	static String DELETE = "DELETE";

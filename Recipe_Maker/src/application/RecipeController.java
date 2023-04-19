@@ -48,9 +48,15 @@ public class RecipeController implements Initializable {
 	
 	//new change
 	String youtubeLink;
+	
+	TextToSpeech tts = new TextToSpeech();
+
 	    
 	@FXML
     private Button addFavButton;
+	
+	@FXML
+	private Button speechBtn;
 	
     @FXML
     private Button idSearchButton;
@@ -548,6 +554,15 @@ public class RecipeController implements Initializable {
 //        idrecipetable.setItems(ingredients);
 		
 	}
+	
+	 @FXML
+	    private void speechFunction() {
+		 
+		 System.out.println("inside speech function");
+		 
+	    tts.speak(idrecipeinstructions.getText());
+		 
+	 }
     
     
 }

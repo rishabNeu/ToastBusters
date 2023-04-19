@@ -4,6 +4,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="710.0" prefWidth="1215.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainMenuController">
    <children>
@@ -19,8 +20,19 @@
                   <Image url="@images/pantry2.jpeg" />
                </image>
             </ImageView>
-            <Button fx:id="pantryBtn" layoutX="566.0" layoutY="152.0" mnemonicParsing="false" onAction="#showPantryView" onMouseClicked="#showPantryView" prefHeight="86.0" prefWidth="274.0" text="MANAGE YOUR PANTRY" />
-            <Button fx:id="recipeBtn" layoutX="578.0" layoutY="574.0" mnemonicParsing="false" onAction="#showRecipeView" onMouseClicked="#showPlannerView" prefHeight="86.0" prefWidth="262.0" text="FIND YOUR RECIPE" />
+            <Button fx:id="pantryBtn" layoutX="478.0" layoutY="152.0" mnemonicParsing="false" onAction="#showPantryView" onMouseClicked="#showPantryView" prefHeight="86.0" prefWidth="362.0" stylesheets="@style.css" text="MANAGE YOUR PANTRY" textFill="#c0a28f">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="19.0" />
+               </font></Button>
+            <Button fx:id="recipeBtn" layoutX="483.0" layoutY="552.0" mnemonicParsing="false" onAction="#showRecipeView" onMouseClicked="#showPlannerView" prefHeight="109.0" prefWidth="361.0" stylesheets="@style.css" text="FIND YOUR RECIPE" textFill="#c0a28f">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="19.0" />
+               </font></Button>
+            <Button fx:id="favouriteBtn" layoutX="478.0" layoutY="353.0" mnemonicParsing="false" onAction="#showFavouriteView" onMouseClicked="#showPantryView" prefHeight="86.0" prefWidth="362.0" stylesheets="@style.css" text="CHECK FAVORITES" textFill="#c0a28f">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="19.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

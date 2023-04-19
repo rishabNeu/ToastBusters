@@ -92,6 +92,11 @@
                   </Button>
                </children>
             </HBox>
+            <Button fx:id="speechBtn" layoutX="810.0" layoutY="107.0" mnemonicParsing="false" onAction="#speechFunction" prefHeight="37.0" prefWidth="120.0" style="-fx-background-color: #c0a28f; -fx-background-radius: 30 30 30 30;" text="Speech" textFill="#251114">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font>
+            </Button>
          </children></Pane>
       <Button fx:id="idFindByItems" layoutX="843.0" layoutY="82.0" mnemonicParsing="false" onAction="#SearchButtonClickByItems" prefHeight="37.0" prefWidth="120.0" style="-fx-background-color: #c0a28f; -fx-background-radius: 30 30 30 30;" text="Find by Items" textFill="#251114">
          <font>
