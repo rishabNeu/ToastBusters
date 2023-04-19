@@ -40,8 +40,6 @@ import java.util.ResourceBundle;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-
  
 
 public class RecipeController implements Initializable {

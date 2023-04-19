@@ -53,9 +53,9 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="180.0" fitWidth="177.0" layoutX="1029.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="138.0" fitWidth="255.0" layoutX="955.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/tarushukla/Downloads/food.png" />
+            <Image url="file:/Users/tarushukla/CookOff/Recipe_Maker/src/application/images/giphy.gif" />
          </image>
       </ImageView>
       <TextField fx:id="tfGrocery" layoutX="174.0" layoutY="73.0" prefHeight="26.0" prefWidth="245.0" />

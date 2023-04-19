@@ -73,7 +73,7 @@
                   </Text>
                </children>
             </HBox>
-            <HBox layoutX="630.0" layoutY="33.0" prefHeight="11.0" prefWidth="376.0">
+            <HBox layoutX="422.0" layoutY="13.0" prefHeight="45.0" prefWidth="580.0">
                <children>
                   <Label prefHeight="25.0" prefWidth="168.0" text="RECIPE NAME:   " textFill="#251114">
                      <font>
@@ -85,6 +85,11 @@
                         <Font name="Comic Sans MS Bold" size="18.0" />
                      </font>
                   </Text>
+                  <Button fx:id="addFavButton" mnemonicParsing="false" onAction="#addToFavourites" prefHeight="37.0" prefWidth="148.0" style="-fx-background-color: #c0a28f;" text="Add to Favourites" textFill="#251114">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="14.0" />
+                     </font>
+                  </Button>
                </children>
             </HBox>
          </children></Pane>
@@ -99,10 +104,5 @@
       </Button>
       <Pane layoutY="189.0" prefHeight="44.0" prefWidth="995.0" style="-fx-background-color: #655a64;" />
       <Pane layoutY="178.0" prefHeight="16.0" prefWidth="995.0" style="-fx-background-color: #15313a;" />
-      <Button fx:id="addFavButton" layoutX="362.0" layoutY="141.0" mnemonicParsing="false" onAction="#addToFavourites" prefHeight="37.0" prefWidth="148.0" style="-fx-background-color: #c0a28f;" text="Add to Favourites" textFill="#251114">
-         <font>
-            <Font name="Comic Sans MS Bold" size="14.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>
