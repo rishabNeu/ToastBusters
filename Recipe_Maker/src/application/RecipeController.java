@@ -45,6 +45,9 @@ import org.json.JSONObject;
 public class RecipeController implements Initializable {
 	
 	String recipeindex;
+	
+	//new change
+	String youtubeLink;
 	    
 	@FXML
     private Button addFavButton;
@@ -101,7 +104,10 @@ public class RecipeController implements Initializable {
     @FXML
     private void addToFavourites(ActionEvent event) {
     	DBConnection db = new DBConnection();
-    	String query = "INSERT INTO favourites (mealname) VALUES (" + "'" + idrecipetitle.getText() + "')";
+    	//new code
+    	System.out.println("the link is : " + youtubeLink );    
+    	String query = "INSERT INTO favourites (mealname,link) VALUES (" + "'" + idrecipetitle.getText() + "' ," + "'"+ youtubeLink + "')";
+    	System.out.println(query);
     	db.connectAndExecute(query,DBConnection.INSERT);
     }
     
@@ -189,7 +195,8 @@ public class RecipeController implements Initializable {
 	            test = test.replaceAll(".+=", "");
 	            //webEngine.load("http://www.youtube.com/watch?v=".concat(test));
 	            //idrecipewebview.setPrefSize(640, 390);
-	            
+	            //new code
+	            youtubeLink = "http://www.youtube.com/watch?v="+test; 
 	            
 	            for(int i = 0; i<recipes.length(); i++) {
 	            	Ingredients ingr1;
@@ -344,7 +351,8 @@ public class RecipeController implements Initializable {
 	            test = test.replaceAll(".+=", "");
 	            //webEngine.load("http://www.youtube.com/watch?v=".concat(test));
 	            //idrecipewebview.setPrefSize(640, 390);
-	            
+	            youtubeLink = "http://www.youtube.com/watch?v="+test; 
+
 	            
 	            for(int i = 0; i<recipes.length(); i++) {
 	            	Ingredients ingr1;

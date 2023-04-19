@@ -26,6 +26,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 public class PlannerController implements Initializable  {
@@ -34,9 +36,17 @@ public class PlannerController implements Initializable  {
 	@FXML
     private Button backButton;
 	
+	@FXML
+	private WebView idrecipewebview;
 	
 	@FXML
 	private TextArea favTxtArea;
+	
+	@FXML 
+	private ComboBox<String> favCombo;
+	
+	@FXML
+	private Button favSelect;
 	
 //    @FXML
 //    private ImageView backPlanner;
@@ -89,6 +99,43 @@ public class PlannerController implements Initializable  {
 		stage.show();
     }
     
+    @FXML
+    private void favAction(ActionEvent event) throws IOException {
+    	System.out.println("in Fav Action");
+		
+		DBConnection db = new DBConnection();
+
+    	
+    	String favRecipeName = favCombo.getValue();
+		
+    	//String query = "SELECT DISTINCT mealname FROM favourites where mealname ;";
+		String query = "SELECT mealname, link FROM favourites WHERE mealname = '" + favRecipeName + "'";
+    	System.out.println(query);
+    	
+    	//getting clicked fav item
+    	ResultSet rs;
+    	String youtubeLink = "";
+		
+		try {
+    		rs = db.connectAndExecute(query,DBConnection.SELECT);
+
+    		while(rs.next()) {
+    			
+    			youtubeLink = rs.getString("link");
+    		
+    		}
+    	}catch(Exception ex) {
+    		ex.printStackTrace();
+    	}
+		
+    	System.out.println("in fav to check link value : " + youtubeLink);
+    	
+         WebEngine webEngine = idrecipewebview.getEngine();
+        webEngine.load(youtubeLink);
+        idrecipewebview.setPrefSize(640, 390);
+
+    }
+    
 //    @FXML
 //    void updateDayPlan(MouseEvent event) {
 //    	DBConnection db = new DBConnection();
@@ -122,11 +169,9 @@ public class PlannerController implements Initializable  {
     	}
 		
 		
-		for(String lvs : favourites) {
-//			cbBreakfast.getItems().add(lvs);
-//			cbDinner.getItems().add(lvs);
-//			cbLunch.getItems().add(lvs);
-			favTxtArea.appendText(lvs + "\n");
+		for(String fav : favourites) {
+			favCombo.getItems().add(fav);
+			favTxtArea.appendText(fav + "\n");
 
 	    }
 //		showPlanner();
