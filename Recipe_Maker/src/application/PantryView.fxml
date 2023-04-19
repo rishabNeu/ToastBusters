@@ -22,7 +22,7 @@
       </ImageView>
       <HBox prefHeight="53.0" prefWidth="1215.0" style="-fx-background-color: #15313a;">
          <children>
-            <Button fx:id="backButton" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToScene1" onMouseClicked="#switchToScene1" prefHeight="49.0" prefWidth="119.0" style="-fx-background-color: #15313a;" text="Back" textFill="#c0a28f" textOverrun="WORD_ELLIPSIS">
+            <Button fx:id="backButton" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToScene1" onMouseClicked="#switchToScene1" prefHeight="49.0" prefWidth="119.0" stylesheets="@style.css" text="Back" textFill="#c0a28f" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="Comic Sans MS" size="18.0" />
                </font>
@@ -34,7 +34,7 @@
             </Label>
          </children></HBox>
       <HBox layoutY="657.0" prefHeight="53.0" prefWidth="1215.0" style="-fx-background-color: #15313a;" />
-      <TableView fx:id="tvGrocery" layoutX="256.0" layoutY="207.0" onMouseClicked="#rowClicked" prefHeight="416.0" prefWidth="798.0" style="-fx-background-color: #89949c;" styleClass="pantrytable">
+      <TableView fx:id="tvGrocery" layoutX="256.0" layoutY="207.0" onMouseClicked="#rowClicked" prefHeight="416.0" prefWidth="798.0" style="-fx-background-color: #89949c;" styleClass="column-header-background" stylesheets="@style.css">
         <columns>
           <TableColumn fx:id="colid" editable="false" prefWidth="65.0" text="ID" />
           <TableColumn fx:id="colGrocery" editable="false" prefWidth="276.0715026855469" text="Ingredient" />
@@ -44,13 +44,13 @@
       </TableView>
       <Label fx:id="quantityLabel" layoutX="468.0" layoutY="75.0" pickOnBounds="false" prefHeight="17.0" prefWidth="99.0" text="Quantity :" textFill="#c0a28f">
          <font>
-            <Font size="18.0" />
+            <Font name="Comic Sans MS Bold" size="18.0" />
          </font>
       </Label>
       <DatePicker fx:id="tfUseBy" layoutX="813.0" layoutY="73.0" prefHeight="26.0" prefWidth="108.0" />
-      <Label fx:id="ingredientLabel" layoutX="41.0" layoutY="74.0" prefHeight="17.0" prefWidth="100.0" text="Ingredients :" textFill="#c0a28f">
+      <Label fx:id="ingredientLabel" layoutX="22.0" layoutY="74.0" prefHeight="25.0" prefWidth="119.0" text="Ingredients :" textFill="#c0a28f">
          <font>
-            <Font size="18.0" />
+            <Font name="Comic Sans MS Bold" size="18.0" />
          </font>
       </Label>
       <ImageView fitHeight="138.0" fitWidth="255.0" layoutX="955.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
@@ -59,9 +59,9 @@
          </image>
       </ImageView>
       <TextField fx:id="tfGrocery" layoutX="174.0" layoutY="73.0" prefHeight="26.0" prefWidth="245.0" />
-      <Label fx:id="useByLabel" layoutX="735.0" layoutY="75.0" prefHeight="23.0" prefWidth="70.0" text="Expires :" textFill="#c0a28f">
+      <Label fx:id="useByLabel" layoutX="725.0" layoutY="75.0" prefHeight="25.0" prefWidth="80.0" text="Expires :" textFill="#c0a28f">
          <font>
-            <Font size="18.0" />
+            <Font name="Comic Sans MS Bold" size="18.0" />
          </font>
       </Label>
       <TextField fx:id="tfQuantity" layoutX="566.0" layoutY="73.0" prefHeight="26.0" prefWidth="115.0" />

@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
@@ -17,18 +18,40 @@
             <Image url="file:/Users/tarushukla/CookOff/Recipe_Maker/src/application/images/making-dessert.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="424.0" layoutY="62.0" prefHeight="66.0" prefWidth="662.0" style="-fx-background-color: #15313a;" text="  Find you favorite recipes here!" textAlignment="CENTER" textFill="#c0a28f">
+      <Label layoutX="-1.0" layoutY="25.0" prefHeight="103.0" prefWidth="1216.0" style="-fx-background-color: #15313a;" text="                      Find you favorite recipes here!" textAlignment="CENTER" textFill="#c0a28f">
          <font>
             <Font name="Comic Sans MS Bold" size="40.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="31.0" layoutY="25.0" mnemonicParsing="false" onAction="#backAction" prefHeight="49.0" prefWidth="89.0" style="-fx-background-color: #15313a;" text="Back" textFill="#c0a28f">
+      <Button fx:id="backButton" layoutX="20.0" layoutY="52.0" mnemonicParsing="false" onAction="#backAction" prefHeight="49.0" prefWidth="89.0" stylesheets="@style.css" text="Back" textFill="#c0a28f">
          <font>
             <Font name="Comic Sans MS Bold" size="20.0" />
          </font></Button>
-      <TextArea fx:id="favTxtArea" layoutX="420.0" layoutY="229.0" prefHeight="453.0" prefWidth="715.0" />
-      <ComboBox fx:id="favCombo" layoutX="59.0" layoutY="204.0" prefWidth="150.0" />
-      <Button fx:id="favSelect" layoutX="59.0" layoutY="283.0" mnemonicParsing="false" onAction="#favAction" text="Select" />
-      <WebView fx:id="idrecipewebview" layoutX="34.0" layoutY="389.0" prefHeight="200.0" prefWidth="342.0" />
+      <Label contentDisplay="CENTER" layoutX="-1.0" layoutY="125.0" opacity="0.7" prefHeight="125.0" prefWidth="526.0" style="-fx-background-color: #15313a;" stylesheets="@style.css" text="                  Delicious dishes for you to try!" textFill="#c0a28f">
+         <font>
+            <Font name="Comic Sans MS Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="525.0" layoutY="127.0" opacity="0.7" prefHeight="124.0" prefWidth="690.0" style="-fx-background-color: #15313a;" text="                 Watch how to make these recipes on YouTube!" textFill="#c0a28f">
+         <font>
+            <Font name="Comic Sans MS Bold" size="18.0" />
+         </font>
+      </Label>
+      <Pane layoutY="244.0" prefHeight="451.0" prefWidth="1214.0" style="-fx-background-color: #15313a;;">
+         <children>
+            <Button fx:id="favSelect" layoutX="876.0" layoutY="9.0" mnemonicParsing="false" onAction="#favAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #c0a28f;" stylesheets="@style.css" text="Select">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="favCombo" layoutX="589.0" layoutY="10.0" prefHeight="26.0" prefWidth="217.0" style="-fx-background-color: #c0a28f;" />
+            <TextArea fx:id="favTxtArea" editable="false" layoutX="173.0" layoutY="46.0" opacity="0.8" prefHeight="362.0" prefWidth="270.0">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="18.0" />
+               </font>
+            </TextArea>
+            <WebView fx:id="idrecipewebview" layoutX="588.0" layoutY="88.0" prefHeight="350.0" prefWidth="600.0" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

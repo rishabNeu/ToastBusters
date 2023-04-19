@@ -1,3 +1,32 @@
-.addFavButton:hover{
-	-fx-background-color: #944a4a;
+.button{
+	-fx-background-color:  #15313a;
+	-fx-background-radius: 30 30 30 30;
 }
+.button:hover{
+	-fx-text-fill: #15313a;
+	-fx-background-color:  #c0a28f;
+	-fx-background-radius: 30 30 30 30;
+}
+.button:pressed{
+	-fx-text-fill: #15313a;
+	-fx-background-color:  #c0a28f; 
+	-fx-background-radius: 30 30 30 30;
+} 
+
+.button1{
+	-fx-background-color:  #15313a;
+	-fx-background-radius: 30 30 30 30;
+}
+.button1::hover{
+	-fx-text-fill: #15313a;
+	-fx-background-color:  #f2639f;
+	-fx-background-radius: 30 30 30 30;
+}
+.button1:clicked{
+	-fx-text-fill: #15313a;
+	-fx-background-color:  #f2639f; 
+	-fx-background-radius: 30 30 30 30;
+} 
+.pantrytable.column-header-background .filler {
+ 	-fx-background-color:  #8c9ca0;
+ }

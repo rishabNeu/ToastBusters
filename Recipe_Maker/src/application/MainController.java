@@ -48,7 +48,7 @@ public class MainController implements Initializable {
 				Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 				//we get the source of event and cast it to a node
 				Scene scene = new Scene(root);
-				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+				scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 				stage.setScene(scene);
 				stage.show();
 			}else {

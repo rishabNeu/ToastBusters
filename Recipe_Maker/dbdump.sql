@@ -93,7 +93,7 @@ LOCK TABLES `favourites` WRITE;
 INSERT INTO `favourites` VALUES (1,'Baingan Bharta'),(2,'Beef and Mustard Pie'),(3,'Beef Lo Mein'),(4,'Broccoli & Stilton soup'),(5,'Chicken Handi'),(6,'Kung Pao Chicken'),(7,'BeaverTails'),(8,'Chicken Handi');
 /*!40000 ALTER TABLE `favourites` ENABLE KEYS */;
 UNLOCK TABLES;
-
+ALTER TABLE `favourites`ADD `link` varchar(255);
 --
 -- Table structure for table `groceries`
 --

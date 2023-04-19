@@ -20,15 +20,15 @@
                   <Image url="@images/pantry2.jpeg" />
                </image>
             </ImageView>
-            <Button fx:id="pantryBtn" layoutX="478.0" layoutY="152.0" mnemonicParsing="false" onAction="#showPantryView" onMouseClicked="#showPantryView" prefHeight="86.0" prefWidth="362.0" style="-fx-background-color: #15313a;" text="MANAGE YOUR PANTRY" textFill="#c0a28f">
+            <Button fx:id="pantryBtn" layoutX="478.0" layoutY="152.0" mnemonicParsing="false" onAction="#showPantryView" onMouseClicked="#showPantryView" prefHeight="86.0" prefWidth="362.0" stylesheets="@style.css" text="MANAGE YOUR PANTRY" textFill="#c0a28f">
                <font>
                   <Font name="Comic Sans MS Bold" size="19.0" />
                </font></Button>
-            <Button fx:id="recipeBtn" layoutX="483.0" layoutY="552.0" mnemonicParsing="false" onAction="#showRecipeView" onMouseClicked="#showPlannerView" prefHeight="109.0" prefWidth="361.0" style="-fx-background-color: #15313a;" text="FIND YOUR RECIPE" textFill="#c0a28f">
+            <Button fx:id="recipeBtn" layoutX="483.0" layoutY="552.0" mnemonicParsing="false" onAction="#showRecipeView" onMouseClicked="#showPlannerView" prefHeight="109.0" prefWidth="361.0" stylesheets="@style.css" text="FIND YOUR RECIPE" textFill="#c0a28f">
                <font>
                   <Font name="Comic Sans MS Bold" size="19.0" />
                </font></Button>
-            <Button fx:id="favouriteBtn" layoutX="478.0" layoutY="353.0" mnemonicParsing="false" onAction="#showFavouriteView" onMouseClicked="#showPantryView" prefHeight="86.0" prefWidth="362.0" style="-fx-background-color: #15313a;" text="CHECK FAVORITES" textFill="#c0a28f">
+            <Button fx:id="favouriteBtn" layoutX="478.0" layoutY="353.0" mnemonicParsing="false" onAction="#showFavouriteView" onMouseClicked="#showPantryView" prefHeight="86.0" prefWidth="362.0" stylesheets="@style.css" text="CHECK FAVORITES" textFill="#c0a28f">
                <font>
                   <Font name="Comic Sans MS Bold" size="19.0" />
                </font>

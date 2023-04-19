@@ -91,7 +91,7 @@ public class PlannerController implements Initializable  {
     	
          WebEngine webEngine = idrecipewebview.getEngine();
         webEngine.load(youtubeLink);
-        idrecipewebview.setPrefSize(640, 390);
+        //idrecipewebview.setPrefSize(640, 390);
 
     }
     

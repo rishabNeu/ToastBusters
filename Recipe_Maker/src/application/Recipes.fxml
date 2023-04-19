@@ -24,7 +24,7 @@
       </ImageView>
       <ComboBox fx:id="recipeComboBox" layoutX="22.0" layoutY="80.0" prefHeight="48.0" prefWidth="225.0" />
       <TextArea fx:id="idSearchItems" layoutX="468.0" layoutY="83.0" prefHeight="39.0" prefWidth="352.0" />
-      <Button fx:id="idSearchButton" layoutX="264.0" layoutY="84.0" mnemonicParsing="false" onAction="#SearchButtonClick" prefHeight="37.0" prefWidth="135.0" style="-fx-background-color: #c0a28f;" text="Find from pantry" textFill="#251114">
+      <Button fx:id="idSearchButton" layoutX="264.0" layoutY="84.0" mnemonicParsing="false" onAction="#SearchButtonClick" prefHeight="37.0" prefWidth="135.0" style="-fx-background-color: #c0a28f; -fx-background-radius: 30 30 30 30;" text="Find from pantry" textFill="#251114">
          <font>
             <Font name="Comic Sans MS Bold" size="14.0" />
          </font></Button>
@@ -85,7 +85,7 @@
                         <Font name="Comic Sans MS Bold" size="18.0" />
                      </font>
                   </Text>
-                  <Button fx:id="addFavButton" mnemonicParsing="false" onAction="#addToFavourites" prefHeight="37.0" prefWidth="148.0" style="-fx-background-color: #c0a28f;" text="Add to Favourites" textFill="#251114">
+                  <Button fx:id="addFavButton" mnemonicParsing="false" onAction="#addToFavourites" prefHeight="37.0" prefWidth="148.0" styleClass="button1" stylesheets="@style.css" text="Add to Favourites" textFill="#251114">
                      <font>
                         <Font name="Comic Sans MS Bold" size="14.0" />
                      </font>
@@ -93,11 +93,11 @@
                </children>
             </HBox>
          </children></Pane>
-      <Button fx:id="idFindByItems" layoutX="843.0" layoutY="82.0" mnemonicParsing="false" onAction="#SearchButtonClickByItems" prefHeight="37.0" prefWidth="120.0" style="-fx-background-color: #c0a28f;" text="Find by Items" textFill="#251114">
+      <Button fx:id="idFindByItems" layoutX="843.0" layoutY="82.0" mnemonicParsing="false" onAction="#SearchButtonClickByItems" prefHeight="37.0" prefWidth="120.0" style="-fx-background-color: #c0a28f; -fx-background-radius: 30 30 30 30;" text="Find by Items" textFill="#251114">
          <font>
             <Font name="Comic Sans MS Bold" size="14.0" />
          </font></Button>
-      <Button fx:id="bckbtn" layoutX="7.0" layoutY="9.0" mnemonicParsing="false" onAction="#backButton" prefHeight="42.0" prefWidth="79.0" style="-fx-background-color: #15313a;" text="Back" textFill="#c0a28f">
+      <Button fx:id="bckbtn" layoutX="7.0" layoutY="9.0" mnemonicParsing="false" onAction="#backButton" prefHeight="42.0" prefWidth="79.0" stylesheets="@style.css" text="Back" textFill="#c0a28f">
          <font>
             <Font name="Comic Sans MS Bold" size="14.0" />
          </font>
