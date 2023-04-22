@@ -8,11 +8,11 @@ Recipe Recommender Application
 
 ## Steps to run the application
 `1. Clone the repository\`
- `2. Set your module path to include JavaFx libraries\`
-  `3. Add all the external jars for the necessary functionalities\`
- `4. Set the VM arguments for the Main java file\`
-  `5. Run the sql db script committed to the repo before running the Main application\`
- `6. Once the script is done runnning launch the application by running Main.java file\`
+ `2. Set your module path to include JavaFx libraries<br />`
+  `3. Add all the external jars for the necessary functionalities<br />`
+ `4. Set the VM arguments for the Main java file<br />`
+  `5. Run the sql db script committed to the repo before running the Main application<br />`
+ `6. Once the script is done runnning launch the application by running Main.java file<br />`
   
   
  ## Problem Statement
