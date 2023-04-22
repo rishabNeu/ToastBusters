@@ -7,12 +7,12 @@ Recipe Recommender Application
 - Taru Shukla (002193864)
 
 ## Steps to run the application
-`1. Clone the repository<br/>`
- `2. Set your module path to include JavaFx libraries<br/>`
-  `3. Add all the external jars for the necessary functionalities<br/>`
- `4. Set the VM arguments for the Main java file<br/>`
-  `5. Run the sql db script committed to the repo before running the Main application<br/>`
- `6. Once the script is done runnning launch the application by running Main.java file<br/>`
+`1. Clone the repository`<br/>
+ `2. Set your module path to include JavaFx libraries`<br/>
+  `3. Add all the external jars for the necessary functionalities`<br/>
+ `4. Set the VM arguments for the Main java file`<br/>
+  `5. Run the sql db script committed to the repo before running the Main application`<br/>
+ `6. Once the script is done runnning launch the application by running Main.java file`<br/>
   
   
  ## Problem Statement
