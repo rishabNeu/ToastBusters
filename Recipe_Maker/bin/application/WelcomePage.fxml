@@ -32,7 +32,7 @@
                </font></Button>
          </children>
       </AnchorPane>
-      <Label fx:id="homeLabel" alignment="CENTER" layoutX="394.0" layoutY="14.0" prefHeight="70.0" prefWidth="522.0" text="FIND MY RECIPE" textFill="#c0a28f">
+      <Label fx:id="homeLabel" alignment="CENTER" layoutX="394.0" layoutY="14.0" prefHeight="70.0" prefWidth="522.0" text="ToastBusters" textFill="#c0a28f">
          <font>
             <Font name="Comic Sans MS" size="54.0" />
          </font>

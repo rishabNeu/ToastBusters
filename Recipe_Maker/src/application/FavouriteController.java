@@ -30,7 +30,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
-public class PlannerController implements Initializable  {
+public class FavouriteController implements Initializable  {
 
 	
 	@FXML

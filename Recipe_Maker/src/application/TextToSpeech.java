@@ -46,7 +46,7 @@ public class TextToSpeech {
 	            synthesizer.resume();
 
 	            // Set the voice of the synthesizer
-	            Voice voice = new Voice(null, Voice.GENDER_FEMALE, Voice.AGE_TEENAGER, null);
+	            Voice voice = new Voice(null, Voice.GENDER_MALE, Voice.AGE_TEENAGER, null);
 	            synthesizer.getSynthesizerProperties().setVoice(voice);
 
 	            // Speak the desired text

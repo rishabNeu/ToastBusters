@@ -129,17 +129,17 @@ public class RecipeController implements Initializable {
     @FXML
     private void SearchButtonClick() {
     	System.out.println("Recipe box items: "+ recipeComboBox.getValue());
-    	MealApi api = new MealApi();
-    	String responseBody = api.callApi(MealApi.MEALDB_URL, recipeComboBox.getValue().toString());
+    	RecipeApi api = new RecipeApi();
+    	String responseBody = api.callRecipeApi(RecipeApi.MEALDB_URL, recipeComboBox.getValue().toString());
 		System.out.println("The response is -------"+responseBody);
 		
 		final JSONObject obj = new JSONObject(responseBody);
 	    final JSONArray meals = obj.getJSONArray("meals");
-	    Meal[] mealArr = new Meal[meals.length()];
+	    Meal[] recipeArr = new Meal[meals.length()];
 	    JSONObject[] arr = new JSONObject[meals.length()];
 	    for(int i=0;i<meals.length();i++) {
 	    	arr[i] = (JSONObject) meals.get(i);
-	    	mealArr[i] = new Meal(arr[i].getInt("idMeal"),arr[i].getString("strMeal"),arr[i].getString("strMealThumb"));
+	    	recipeArr[i] = new Meal(arr[i].getInt("idMeal"),arr[i].getString("strMeal"),arr[i].getString("strMealThumb"));
 	    }
 	    
 	    idlistview.getItems().clear();
@@ -162,8 +162,8 @@ public class RecipeController implements Initializable {
 	        	String myString = newValue;
 	        	System.out.println("New Valye is "+ newValue);
 	        	myString = myString.replaceAll(" ", "_");
-	        	String responseBody2 = api.callApi(MealApi.MEALDB_URL_SEARCH_BY_MEAL, myString);
-	    	
+	        	String responseBody2 = api.callRecipeApi(RecipeApi.MEALDB_URL_SEARCH_BY_MEAL, myString);
+	        	
 	    		final JSONObject obj2 = new JSONObject(responseBody2);
 	    	    final JSONArray recipes = obj2.getJSONArray("meals");
 	    	    Recipe[] recipeArr = new Recipe[recipes.length()];
@@ -280,8 +280,8 @@ public class RecipeController implements Initializable {
     @FXML
     private void SearchButtonClickByItems() {
     	System.out.println("Recipe box items: "+ recipeComboBox.getValue());
-    	MealApi api = new MealApi();
-    	String responseBody = api.callApiForItems(MealApi.MEALDB_URL_SEARCH_BY_INGREDIENT, idSearchItems.getText());
+    	RecipeApi api = new RecipeApi();
+    	String responseBody = api.callApiForItems(RecipeApi.MEALDB_URL_SEARCH_BY_INGREDIENT, idSearchItems.getText());
 		System.out.println("The response is -------"+responseBody);
     	
 		
@@ -318,7 +318,7 @@ public class RecipeController implements Initializable {
 	        	String myString = newValue;
 	        	System.out.println("New Valye is "+ newValue);
 	        	myString = myString.replaceAll(" ", "_");
-	        	String responseBody2 = api.callApi(MealApi.MEALDB_URL_SEARCH_BY_MEAL, myString);
+	        	String responseBody2 = api.callRecipeApi(RecipeApi.MEALDB_URL_SEARCH_BY_MEAL, myString);
 	    	
 	    		final JSONObject obj2 = new JSONObject(responseBody2);
 	    	    final JSONArray recipes = obj2.getJSONArray("meals");
@@ -442,116 +442,8 @@ public class RecipeController implements Initializable {
     		recipeComboBox.getItems().add(groceryItem.getGroceryName().toLowerCase());
     	
     	recipeComboBox.setPromptText("Search your choice");
-    	MealApi api = new MealApi();
-    	String responseBody = api.callApi(MealApi.MEALDB_URL_SEARCH_BY_MEAL, "Apam_balik");
-		//rightPane
-//
-//		final JSONObject obj2 = new JSONObject(responseBody);
-//	    final JSONArray recipes = obj2.getJSONArray("meals");
-//	    Recipe[] recipeArr = new Recipe[recipes.length()];
-//	    JSONObject[] arr2 = new JSONObject[recipes.length()];
-//	    ObservableList<Ingredients> ingredients = FXCollections.observableArrayList();
-//	    for(int i=0;i<recipes.length();i++) {
-//	    	arr2[i] = (JSONObject) recipes.get(i);
-//	    	recipeArr[i] = new Recipe(arr2[i].getInt("idMeal"),arr2[i].getString("strMeal"),arr2[i].getString("strCategory"),
-//	    			arr2[i].getString("strInstructions"), arr2[i].getString("strMealThumb"), arr2[i].getString("strYoutube"),
-//	    			arr2[i].getString("strIngredient1"), arr2[i].getString("strIngredient2"), arr2[i].getString("strIngredient3"),
-//	    			arr2[i].getString("strIngredient4"), arr2[i].getString("strIngredient5"), arr2[i].getString("strIngredient6"),
-//	    			arr2[i].getString("strIngredient7"), arr2[i].getString("strIngredient8"), arr2[i].getString("strIngredient9"),
-//	    			arr2[i].getString("strIngredient10"), arr2[i].getString("strIngredient11"), arr2[i].getString("strIngredient12"),
-//	    			arr2[i].getString("strIngredient13"), arr2[i].getString("strIngredient14"), arr2[i].getString("strIngredient15"),
-//	    			arr2[i].getString("strIngredient16"), arr2[i].getString("strIngredient17"), arr2[i].getString("strIngredient18"),
-//	    			arr2[i].getString("strIngredient19"), arr2[i].getString("strIngredient20"), arr2[i].getString("strMeasure1"), 
-//	    			arr2[i].getString("strMeasure2"), arr2[i].getString("strMeasure3"), arr2[i].getString("strMeasure4"),
-//	    			arr2[i].getString("strMeasure5"), arr2[i].getString("strMeasure6"), arr2[i].getString("strMeasure7"), arr2[i].getString("strMeasure8"),
-//	    			arr2[i].getString("strMeasure9"), arr2[i].getString("strMeasure10"), arr2[i].getString("strMeasure11"), arr2[i].getString("strMeasure12"),
-//	    			arr2[i].getString("strMeasure13"), arr2[i].getString("strMeasure14"), arr2[i].getString("strMeasure15"), arr2[i].getString("strMeasure16"),
-//	    			arr2[i].getString("strMeasure17"), arr2[i].getString("strMeasure18"), arr2[i].getString("strMeasure19"), arr2[i].getString("strMeasure20"));
-//	    	Ingredients ingr = new Ingredients(arr2[i].getString("strIngredient1"),arr2[i].getString("strMeasure1"));
-//	    }
-//	    
-//	    idrecipetitle.setText(arr2[0].getString("strMeal"));
-//	    Image img3 = new Image(arr2[0].getString("strMealThumb"));
-//        idrecipeimage.setImage(img3);
-//        idrecipecategory.setText(arr2[0].getString("strCategory"));
-//        idrecipeinstructiontitle.setText("Recipe Instructions:");
-//        idrecipeinstructions.setText(arr2[0].getString("strInstructions"));
-//       
-//       // WebEngine webEngine = idrecipewebview.getEngine();
-//        String test = arr2[0].getString("strYoutube");
-//        test = test.replaceAll(".+=", "");
-//        //webEngine.load("https://www.youtube.com/watch?v=".concat(test));
-//        //idrecipewebview.setPrefSize(640, 390);
-//        
-//
-//        
-//        
-//        //add 10 ingredients and quantities
-//        for(int i = 0; i<recipes.length(); i++) {
-//        	Ingredients ingr1;
-//        	ingr1 = new Ingredients(recipeArr[i].getRecipeIng1(),recipeArr[i].getRecipeQty1());
-//        	ingredients.add(ingr1);
-//        	Ingredients ingr2;
-//        	ingr2 = new Ingredients(recipeArr[i].getRecipeIng2(),recipeArr[i].getRecipeQty2());
-//        	ingredients.add(ingr2);
-//        	Ingredients ingr3;
-//        	ingr3 = new Ingredients(recipeArr[i].getRecipeIng3(),recipeArr[i].getRecipeQty3());
-//        	ingredients.add(ingr3);
-//        	Ingredients ingr4;
-//        	ingr4 = new Ingredients(recipeArr[i].getRecipeIng4(),recipeArr[i].getRecipeQty4());
-//        	ingredients.add(ingr4);
-//        	Ingredients ingr5;
-//        	ingr5 = new Ingredients(recipeArr[i].getRecipeIng5(),recipeArr[i].getRecipeQty5());
-//        	ingredients.add(ingr5);
-//        	Ingredients ingr6;
-//        	ingr6 = new Ingredients(recipeArr[i].getRecipeIng6(),recipeArr[i].getRecipeQty6());
-//        	ingredients.add(ingr6);
-//        	Ingredients ingr7;
-//        	ingr7 = new Ingredients(recipeArr[i].getRecipeIng7(),recipeArr[i].getRecipeQty7());
-//        	ingredients.add(ingr7);
-//        	Ingredients ingr8;
-//        	ingr8 = new Ingredients(recipeArr[i].getRecipeIng8(),recipeArr[i].getRecipeQty8());
-//        	ingredients.add(ingr8);
-//        	Ingredients ingr9;
-//        	ingr9 = new Ingredients(recipeArr[i].getRecipeIng9(),recipeArr[i].getRecipeQty9());
-//        	ingredients.add(ingr9);
-//        	Ingredients ingr10;
-//        	ingr10 = new Ingredients(recipeArr[i].getRecipeIng10(),recipeArr[i].getRecipeQty10());
-//        	ingredients.add(ingr10);
-//        	Ingredients ingr11;
-//        	ingr11 = new Ingredients(recipeArr[i].getRecipeIng11(),recipeArr[i].getRecipeQty11());
-//        	ingredients.add(ingr11);
-//        	Ingredients ingr12;
-//        	ingr12 = new Ingredients(recipeArr[i].getRecipeIng12(),recipeArr[i].getRecipeQty12());
-//        	ingredients.add(ingr12);
-//        	Ingredients ingr13;
-//        	ingr13 = new Ingredients(recipeArr[i].getRecipeIng13(),recipeArr[i].getRecipeQty13());
-//        	ingredients.add(ingr13);
-//        	Ingredients ingr14;
-//        	ingr14 = new Ingredients(recipeArr[i].getRecipeIng14(),recipeArr[i].getRecipeQty14());
-//        	ingredients.add(ingr14);
-//        	Ingredients ingr15;
-//        	ingr15 = new Ingredients(recipeArr[i].getRecipeIng15(),recipeArr[i].getRecipeQty15());
-//        	ingredients.add(ingr15);
-//        	Ingredients ingr16;
-//        	ingr16 = new Ingredients(recipeArr[i].getRecipeIng16(),recipeArr[i].getRecipeQty16());
-//        	ingredients.add(ingr16);
-//        	Ingredients ingr17;
-//        	ingr17 = new Ingredients(recipeArr[i].getRecipeIng17(),recipeArr[i].getRecipeQty17());
-//        	ingredients.add(ingr17);
-//        	Ingredients ingr18;
-//        	ingr18 = new Ingredients(recipeArr[i].getRecipeIng18(),recipeArr[i].getRecipeQty18());
-//        	ingredients.add(ingr18);
-//        	Ingredients ingr19;
-//        	ingr19 = new Ingredients(recipeArr[i].getRecipeIng19(),recipeArr[i].getRecipeQty19());
-//        	ingredients.add(ingr19);
-//        	Ingredients ingr20;
-//        	ingr20 = new Ingredients(recipeArr[i].getRecipeIng20(),recipeArr[i].getRecipeQty20());
-//        	ingredients.add(ingr20);
-//        }
-//        idrecipeingredients.setCellValueFactory(new PropertyValueFactory<Ingredients, String>("recipeIngredient"));
-//        idrecipequantity.setCellValueFactory(new PropertyValueFactory<Ingredients, String>("recipeQuantity"));
-//        idrecipetable.setItems(ingredients);
+    	RecipeApi api = new RecipeApi();
+    	String responseBody = api.callRecipeApi(RecipeApi.MEALDB_URL_SEARCH_BY_MEAL, "Apam_balik");
 		
 	}
 	

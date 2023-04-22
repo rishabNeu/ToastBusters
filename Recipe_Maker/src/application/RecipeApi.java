@@ -6,13 +6,13 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class MealApi {
+public class RecipeApi {
 	static String MEALDB_URL = "https://www.themealdb.com/api/json/v2/9973533/filter.php?i=";
 	static String MEALDB_URL_SEARCH_BY_INGREDIENT = "https://www.themealdb.com/api/json/v2/9973533/filter.php?i=";
 	static String MEALDB_URL_SEARCH_BY_MEAL = "https://www.themealdb.com/api/json/v2/9973533/search.php?s=";
 	static String SPECIFIC_MEAL_URL = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=";
 	
-	public String callApi(String url,String query) {
+	public String callRecipeApi(String url,String query) {
 		System.out.println(url.concat(query));
 
 		HttpRequest request = HttpRequest.newBuilder()

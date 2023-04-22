@@ -24,16 +24,11 @@ public class MainMenuController implements Initializable  {
 	ImageView recipeImage;
 	
 	@FXML
-	ImageView plannerImage;
-	
-	@FXML
 	Button pantryBtn;
 	
 	@FXML
 	Button recipeBtn;
-	
-	@FXML
-	Button plannerBtn;
+
 	
 	@FXML
 	Button favouriteBtn;
@@ -56,14 +51,6 @@ public class MainMenuController implements Initializable  {
 		stage.show();
 	}
 	
-	@FXML
-	public void showPlannerView(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("Favourites.fxml"));
-		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
 
 	@FXML
 	public void showFavouriteView(ActionEvent event) throws IOException {
